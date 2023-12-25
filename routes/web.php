@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\PanelController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('admin/index');
+// });
+
+Route::prefix('admin')->group(function () {
+    Route::get('panel',[PanelController::class,'index'])->name('admin.panel');
 });
