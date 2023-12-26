@@ -50,7 +50,7 @@
                       <div class="icon">
                           <i class="fa fa-sitemap"></i>
                       </div>
-                      <a href="#" class="small-box-footer">نمایش</a>
+                      <a href="{{ route('headlines.all') }}" class="small-box-footer">نمایش</a>
                   </div>
               </div>
               <!-- ./col -->

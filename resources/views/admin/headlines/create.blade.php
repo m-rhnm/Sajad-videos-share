@@ -1,8 +1,7 @@
-<?php
-include_once "header.php"
-?>
+@extends('layouts.admin.master')
 
-  <!-- Content Wrapper. Contains page content -->
+@section('content')
+      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -11,8 +10,8 @@ include_once "header.php"
           <div class="col-12">
             <h1 class="m-0 text-dark">
                 <a class="nav-link drawer" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-                دسته بندی ها / افزودن
-                <a class="btn btn-primary float-left text-white py-2 px-4" href="category.php">بازگشت به صفحه دسته بندی ها</a>
+                سرفصل ها / افزودن
+                <a class="btn btn-primary float-left text-white py-2 px-4" href="{{ route('headlines.all') }}">بازگشت به صفحه سرفصل ها</a>
             </h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -21,13 +20,16 @@ include_once "header.php"
     <!-- /.content-header -->
 
     <!-- Main content -->
+      
     <div class="content">
       <div class="container-fluid">
+        @include('errors.message')
           <div class="row mt-5">
               <div class="col-md-12">
                   <div class="card card-defualt">
                       <!-- form start -->
-                      <form action="" method="post">
+                      <form action="{{ route('headlines.store') }}" method="post">
+                        @csrf
                           <div class="card-body">
                               <div class="row">
                                   <div class="col-md-6">
@@ -45,7 +47,6 @@ include_once "header.php"
                               </div>
                           </div>
                           <!-- /.card-body -->
-
                           <div class="card-footer">
                               <button type="submit" class="btn btn-primary float-left">ذخیره کردن</button>
                           </div>
@@ -60,7 +61,7 @@ include_once "header.php"
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+@endsection
 
-<?php
-include_once "footer.php"
-?>
+
+

@@ -34,9 +34,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="category.php" class="nav-link">
+                                <a href="{{ route('headlines.all') }}" class="nav-link">
                                     <i class="nav-icon fa fa-sitemap"></i>
-                                    <p>دسته بندی ها</p>
+                                    <p>سرفصل ها</p>
                                 </a>
                             </li>
                         </ul>
