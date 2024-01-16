@@ -10,8 +10,8 @@
           <div class="col-12">
             <h1 class="m-0 text-dark">
                 <a class="nav-link drawer" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-                سرفصل ها / ویرایش
-                <a class="btn btn-primary float-left text-white py-2 px-4" href="category.php">بازگشت به صفحه سرفصل ها</a>
+                سرفصل ها / ویرایش {{ $headline->title }}
+                <a class="btn btn-primary float-left text-white py-2 px-4" href="{{ route('headlines.all') }}">بازگشت به صفحه سرفصل ها</a>
             </h1>
           </div><!-- /.col -->
         </div><!-- /.row -->

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\HeadlineController;
 
 /*
@@ -29,6 +30,16 @@ Route::prefix('admin')->group(function()
         Route::get('edit/{headlines_id}',[HeadlineController::class,'edit'])->name('headlines.edit');
         Route::put('update/{headlines_id}',[HeadlineController::class,'update'])->name('headlines.update');
         Route::delete('remove/{headlines_id}',[HeadlineController::class,'remove'])->name('headlines.remove');
+
+    });
+    Route::prefix('videos')->group(function()
+    {
+        Route::get('',[VideoController::class,'all'])->name('videos.all');
+        Route::get('create',[VideoController::class,'create'])->name('videos.create');
+        Route::post('store',[VideoController::class,'store'])->name('videos.store');
+        // Route::get('edit/{headlines_id}',[HeadlineController::class,'edit'])->name('headlines.edit');
+        // Route::put('update/{headlines_id}',[HeadlineController::class,'update'])->name('headlines.update');
+        // Route::delete('remove/{headlines_id}',[HeadlineController::class,'remove'])->name('headlines.remove');
 
     });
     Route::get('panel',[PanelController::class,'index'])->name('admin.panel');

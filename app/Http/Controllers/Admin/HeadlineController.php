@@ -40,7 +40,7 @@ class HeadlineController extends Controller
    }
    public function edit($headline_id)
    {
-      $headline =Headline::find($headline_id);
+      $headline = Headline::find($headline_id);
       return view('admin.headlines.edit',compact('headline'));
    }
    public function update($headline_id , UpdateRequest $request)
