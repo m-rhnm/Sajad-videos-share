@@ -12,7 +12,7 @@
             <h1 class="m-0 text-dark">
                 <a class="nav-link drawer" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 ویدئوها / افزودن
-                <a class="btn btn-primary float-left text-white py-2 px-4" href="products.php">بازگشت به صفحه ویدئوها</a>
+                <a class="btn btn-primary float-left text-white py-2 px-4" href="{{ route('videos.all') }}">بازگشت به صفحه ویدئوها</a>
             </h1>
           </div><!-- /.col -->
         </div><!-- /.row -->

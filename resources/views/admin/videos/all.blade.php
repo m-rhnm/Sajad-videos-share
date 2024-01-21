@@ -12,7 +12,7 @@
             <h1 class="m-0 text-dark">
                 <a class="nav-link drawer" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 ویدئوها
-                <a class="btn btn-primary float-left text-white py-2 px-4" href="products-add.php">افزودن ویدئو جدید</a>
+                <a class="btn btn-primary float-left text-white py-2 px-4" href="{{ route('videos.create') }}">افزودن ویدئو جدید</a>
             </h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,6 +23,7 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
+        @include('errors.message')
           <div class="row">
               <div class="col-12">
                   <div class="card">
@@ -67,8 +68,16 @@
                                 <td>{{ $video->price }} تومان</td>
                                 <td>{{ $video->created_at }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-default btn-icons" ><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-default btn-icons"><i class="fa fa-trash"></i></a>
+                                    <form action="{{ route('videos.remove', $video->id) }}" method="post">
+                                        @method('delete')
+                                        @csrf
+                                       <button class="btn btn-default btn-icons"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                    <form action="{{ route('videos.edit', $video->id) }}" method="get">
+                                        @csrf
+                                       <button class="btn btn-default btn-icons"><i class="fa fa-edit"></i></button>
+                                    </form>
+                                    
                                 </td>
                             </tr>
                               @endforeach
