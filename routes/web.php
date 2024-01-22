@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\HeadlineController;
+use App\Http\Controllers\Home\HomeVideosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,15 @@ use App\Http\Controllers\Admin\HeadlineController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('admin/index');
-// });
+
+Route::prefix('')->group(function(){
+    Route::get('',[HomeVideosController::class,'index'])->name('home.videos.all');
+    Route::get('{videos_id}/show',[HomeVideosController::class,'show'])->name('home.videos.show');
+    // Route::get('{videos_id}/addToBasket',[BasketController::class,'addToBasket'])->name('home.basket.add');
+    // Route::get('{videos_id}/removeFromBasket',[BasketController::class,'removeFromBasket'])->name('home.basket.remove');
+    // Route::get('checkout',[CheckoutController::class,'show'])->name('home.checkout');
+
+ });
 
 Route::prefix('admin')->group(function()
 {

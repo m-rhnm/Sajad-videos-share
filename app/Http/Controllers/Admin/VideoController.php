@@ -26,7 +26,7 @@ class VideoController extends Controller
     public function store(StoreRequest $request)
     {
         $orginal_path = Storage::putFile('private', $request->file('source'));
-        $demo_path = Storage::putFile('demo', $request->file('demo'));
+        $demo_path = Storage::putFile('public/demo', $request->file('demo'));
         $thumbnail_path = Storage::putFile('thumbnail', $request->file('thumbnail'));
     
         $videos_create = Video::create([
