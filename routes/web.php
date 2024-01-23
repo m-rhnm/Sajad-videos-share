@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\HeadlineController;
 use App\Http\Controllers\Home\HomeVideosController;
@@ -29,6 +30,13 @@ Route::prefix('')->group(function(){
 
 Route::prefix('admin')->group(function()
 {
+    Route::prefix('users')->group(function(){
+        Route::get('create',[UserController::class,'create'])->name('admin.users.create');
+        Route::get('',[UserController::class,'all'])->name('admin.users.all');  
+        Route::post('',[UserController::class,'store'])->name('admin.users.store');
+        // Route::get('{users_id}/edit',[UserController::class,'edit'])->name('admin.users.edit');  
+        // Route::put('{users_id}/update',[UserController::class,'update'])->name('admin.users.update');  
+    });
     Route::prefix('headlines')->group(function()
     {
         Route::get('',[HeadlineController::class,'all'])->name('headlines.all');
