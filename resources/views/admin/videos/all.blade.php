@@ -68,15 +68,15 @@
                                 <td>{{ $video->price }} تومان</td>
                                 <td>{{ $video->created_at }}</td>
                                 <td>
-                                    <form action="{{ route('videos.remove', $video->id) }}" method="post">
-                                        @method('delete')
-                                        @csrf
-                                       <button class="btn btn-default btn-icons"><i class="fa fa-trash"></i></button>
-                                    </form>
-                                    <form action="{{ route('videos.edit', $video->id) }}" method="get">
-                                        @csrf
-                                       <button class="btn btn-default btn-icons"><i class="fa fa-edit"></i></button>
-                                    </form>
+                                  <form action="{{ route('videos.remove', $video->id) }}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                   <button class="btn btn-default btn-icons"><i class="fa fa-trash"></i></button>
+                                </form>
+                                <form action="{{ route('videos.edit', $video->id) }}" method="get">
+                                    @csrf
+                                   <button class="btn btn-default btn-icons"><i class="fa fa-edit"></i></button>
+                                </form>
                                     
                                 </td>
                             </tr>

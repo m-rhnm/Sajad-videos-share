@@ -54,18 +54,25 @@
                                     <th>عملیات</th>
                                 </tr>
                                 @foreach ($users as $user)
-                                <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone_number }}</td>
-                                    <td>{{ $user->role }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>
-                                        <a href="#" class="btn btn-default btn-icons"><i class="fa fa-edit"></i></a>
-                                        <a href="#" class="btn btn-default btn-icons"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                                  <tr>
+                                      <td>{{ $user->id }}</td>
+                                      <td>{{ $user->name }}</td>
+                                      <td>{{ $user->email }}</td>
+                                      <td>{{ $user->phone_number }}</td>
+                                      <td>{{ $user->role }}</td>
+                                      <td>{{ $user->created_at }}</td>
+                                      <td>
+                                        <form action="{{ route('admin.users.remove', $user->id) }}" method="post">
+                                          @method('delete')
+                                          @csrf
+                                          <button class="btn btn-default btn-icons"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                        <form action="{{ route('admin.users.edit', $user->id) }}" method="get">
+                                          @csrf
+                                          <button class="btn btn-default btn-icons"><i class="fa fa-edit"></i></button>
+                                        </form>
+                                      </td>
+                                  </tr>
                                 @endforeach
                                
                             </tbody>
