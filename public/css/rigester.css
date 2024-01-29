@@ -91,3 +91,22 @@
     margin-top: 20px;
     width: 100%;
   }
+   .remember:after{
+    content:" ";
+    clear: both;
+    width: 100px;
+    display: block;
+  }
+   .remember label{
+    float: right;
+  }
+  .remember a{
+    font-family: 'IRANSansWeb', sans-serif;
+    font-size: 13px;
+    color: #888da8;
+    font-weight: 300;
+    }
+  .remember a.forgot{
+    float: left;
+    
+  }	

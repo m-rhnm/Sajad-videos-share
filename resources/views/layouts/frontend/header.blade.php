@@ -53,9 +53,28 @@
                         راهنمای خرید و قوانین
                     </a>
 
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        اکانت من
-                    </a>
+                    @auth
+                    <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs hidden-sm">
+                      <div class="dropdown">
+                        <a data-toggle="dropdown" href="#" class="user-area">
+                            <div class="thumb"><img src="" alt=""></div>
+                            <h2></h2>
+                            <h3>25 اشتراک</h3>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu account-menu">
+                           <li><a href="#"><i class="fa fa-edit color-1"></i>ویرایش پروفایل</a></li>
+                           <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out color-4"></i>خروج</a></li>
+                        </ul>
+                    </div>
+                </div>
+                @endauth
+                @guest
+                <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs hidden-sm">
+                    <a href='{{ route('login') }}' class='btn btn-danger'>log in</a>
+                    <a href='{{ route('register') }}' class='btn btn-danger'>sing up</a>
+                @endguest
+                </div>
                 </div>
             </div>
         </div>
